@@ -1,0 +1,32 @@
+{% extends "blog/base.html" %}
+
+{% block title %}Mi blog{% endblock %}
+
+{% block content %}
+	{% if latest_posts_list %}
+		{% for post in latest_posts_list %}
+			<article>
+				<h2><a href="{% url 'blog:detail' post.id %}">{{ post.titulo }}</a></h2>
+				<p>{{ post.contenido }}</p>
+				<div class="fecha">Publicado: {{ post.fecha_pub }}</div>
+			</article>
+		{% endfor %}
+		{% if is_paginated %}
+	        <div class="pagination">
+	            <span class="page-links">
+	                {% if page_obj.has_previous %}
+	                    <a href="/blog?page={{ page_obj.previous_page_number }}">Anterior</a>
+	                {% endif %}
+	                <span class="page-current">
+	                    Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}
+	                </span>
+	                {% if page_obj.has_next %}
+	                    <a href="/blog?page={{ page_obj.next_page_number }}">Siguiente</a>
+	                {% endif %}
+	            </span>
+	        </div>
+	    {% endif %}
+	{% else %}
+		<p>No hay posts disponibles.</p>
+	{% endif %}
+{% endblock %}

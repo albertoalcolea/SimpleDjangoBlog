@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block title %}{{ post.titulo }}{% endblock %}
+
+{# {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %} #}
+
+{% block content %}
+	<article>
+		<h2><a href="{% url 'blog:detail' post.id %}">{{ post.titulo }}</a></h2>
+		<p>{{ post.contenido }}</p>
+		<div class="fecha">Publicado: {{ post.fecha_pub }}</div>
+	</article>
+{% endblock %}

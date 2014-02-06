@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8" />
+    <title>{% block title %}{% endblock %}</title>
+    <link href="/static/css/style.css" type="text/css" rel="stylesheet" />
+</head>
+<body>
+	<section id="container">
+		<header>
+	    	<h1><a href='{% url 'blog:index' %}'>Bienvenido a la chupipagina de Alberto en Django</a></h1>
+	    </header>
+	    <section id="content">
+	    	{% block content %}{% endblock %}
+	    </section>
+	    <footer>
+		    {% block footer %}
+		    	Creado por <a href="http://twitter.com/albertoalcolea">@albertoalcolea</a>
+		    {% endblock %}
+	    </footer>
+	</section>
+</body>
+</html>
