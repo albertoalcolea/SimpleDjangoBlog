@@ -6,22 +6,30 @@ Simple blog engine using django
 
 Dependencies
 ------------
-  * **django-admin-bootstrapped**
+ * **django-admin-bootstrapped**
+ * **psycopg2**
+
+I suggest using [virtualenv](https://pypi.python.org/pypi/virtualenv) and [pip](https://pypi.python.org/pypi/pip)
+
     pip install django-admin-bootstrapped
-  * **psycopg2**
+
     pip install psycopg2
 
 
 Usage
 -----
 Install the database (configure the connection in blog_project/settings.py)
+
     python manage.py syncdb
 
-Run server:
+Run the development server:
+
     python manage.py runserver
     
-The client-side
+Client-side
+
     http://localhost:8000/blog
 
-The admin-side
+Admin-side
+
     http://localhost:8000/admin
