@@ -18,5 +18,5 @@ urlpatterns = patterns('',
     url(r'^blog/', include('blog.urls', namespace='blog')),
 )
 
-# Contenido estatico
+# Static content
 urlpatterns += staticfiles_urlpatterns()
